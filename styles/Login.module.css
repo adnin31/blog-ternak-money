@@ -1,0 +1,7 @@
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 94vh;
+  margin: 3rem 0 0 !important;
+}

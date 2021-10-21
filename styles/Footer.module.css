@@ -1,0 +1,27 @@
+.footer {
+  background-color: #252b42;
+  bottom: 0;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 1rem 0;
+  position: fixed;
+  min-width: 375px;
+  max-width: 600px;
+  width: 100%;
+}
+
+.footerIcon {
+  object-fit: contain;
+  width: 30px;
+}
+
+.copyIcon {
+  color: white;
+  font-size: 11px;
+}
+
+.iconContainer {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}

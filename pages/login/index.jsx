@@ -18,16 +18,23 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <Header>
-          <p className={styles.articleDate} onClick={() => router.push('/')}>Lewati</p>
+        <Header className={styles.header}>
+          <p className={styles.headerAction} onClick={() => router.push('/')}>Lewati</p>
         </Header>
 
         <Content className={styles.content}>
-          <div>
-            <form>
-              <label htmlFor="name">Name</label>
-              <input id="name" name="name" type="text" autoComplete="name" required />
-              <button type="submit">Register</button>
+          <div className={styles.formContainer}>
+            <h1 className={styles.title}>NEW JIC</h1>
+            <form className={styles.form}>
+              <label htmlFor="name" lassName={styles.label} >Email</label>
+              <input id="name" name="name" type="text" autoComplete="email" required className={styles.input}/>
+
+              <label htmlFor="password" lassName={styles.label} >Password</label>
+              <input id="password" name="password" type="password" autoComplete="password" required className={styles.input}/>
+
+              <button type="submit" className={styles.button}>Sign in</button>
+
+              <p className={styles.copy}>Belum Punya Akun ?<span className={styles.register} onClick={() => router.push('/register')}>Daftar</span></p>
             </form>
           </div>
         </Content>

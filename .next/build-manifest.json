@@ -24,15 +24,15 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/article/[slug]": [
+    "/news": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/article/[slug].js"
+      "static/chunks/pages/news.js"
     ],
-    "/login": [
+    "/roadmap/[pid]": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/login.js"
+      "static/chunks/pages/roadmap/[pid].js"
     ]
   },
   "ampFirstPages": []

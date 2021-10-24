@@ -11,17 +11,17 @@ export default function Footer() {
 
   return (
     <div className={styles.footer}>
-      <div className={styles.iconContainer}>
+      <div className={styles.iconContainer} onClick={() => router.push('/')}>
         <img className={styles.footerIcon} src='/icons8-home-100-white.png' />
         <p className={styles.copyIcon}>Home</p>
       </div>
-      <div className={styles.iconContainer}>
+      <div className={styles.iconContainer} onClick={() => router.push('/news')}>
         <img className={styles.footerIcon} src='/icons8-file-100-white.png' />
-        <p className={styles.copyIcon}>Insight</p>
+        <p className={styles.copyIcon}>News</p>
       </div>
       <div className={styles.iconContainer}>
-      <img className={styles.footerIcon} src='/icons8-combo-chart-100-white.png' />
-        <p className={styles.copyIcon}>Watchlist</p>
+        <img className={styles.footerIcon} src='/icons8-combo-chart-100-white.png' />
+        <p className={styles.copyIcon}>Classes</p>
       </div>
       <div className={styles.iconContainer}>
         <img className={styles.footerIcon} src='/icons8-credit-card-100-white.png' />

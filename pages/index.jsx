@@ -89,7 +89,7 @@ export default function Home() {
           </Header>
 
           <Content>
-            <div className={styles.menu}>
+            {/* <div className={styles.menu}>
               <div className={styles.menuBox}>
                 <img className={styles.logoBox} src='/icons8-graduation-cap-60.png' />
                 <p className={styles.nameBox}>All Classes</p>
@@ -106,7 +106,7 @@ export default function Home() {
                 <img className={styles.logoBox} src='/icons8-graduation-cap-60.png' />
                 <p className={styles.nameBox}>All Classes</p>
               </div>
-            </div>
+            </div> */}
 
             <div className={styles.swiperContainer}>
               {renderSwipe()}
@@ -114,51 +114,8 @@ export default function Home() {
 
             <div className={styles.contentWrapper}>
               <div className={styles.textWrapper}>
-                <p className={styles.event}>Live Classes</p>
-                <p className={styles.action}>Lihat semua</p>
-              </div>
-              <div className={styles.contentContainer}>
-                {
-                  articles.map(article => (
-                    <div key={article} className={styles.previewBox} onClick={() => router.push(`/article/${article}`)} >
-                      <img className={styles.previewImage} src={'/image-not-available.jpeg'} />
-                      <div className={styles.previewTextContainer}>
-                        <p className={styles.previewDate}>Jum, 20 okt 21 &#183; 19.00 WIB</p>
-                        <h2 className={styles.previewTitle}>Welcome to NEW JIC</h2>
-                      </div>
-                    </div>
-                  ))
-                }
-              </div>
-            </div>
-
-            <div className={styles.contentWrapper}>
-              <div className={styles.textWrapper}>
-                <p className={styles.event}>New JIC Academy</p>
-                <p className={styles.action}>Lihat semua</p>
-              </div>
-              <div className={styles.contentContainer}>
-                {
-                  academies.map((academy, index) => (
-                    <div key={index} className={styles.previewAcademy}>
-                      <img className={styles.academyImage} src={'/image-not-available.jpeg'} />
-                      <div className={styles.academyTextContainer}>
-                        <h2 className={styles.academyTitle}>{academy.class}</h2>
-                        <div className={styles.academyLevelContainer}>
-                          <p className={styles.level}>{academy.level}</p>
-                          <div className={styles.video}>{academy.totalVideo} Videos</div>
-                        </div>
-                      </div>
-                    </div>
-                  ))
-                }
-              </div>
-            </div>
-
-            <div className={styles.contentWrapper}>
-              <div className={styles.textWrapper}>
                 <p className={styles.event}>Trending News</p>
-                <p className={styles.action}>Lihat semua</p>
+                <p className={styles.action} onClick={() => router.push(`/article/lorem-ipsum`)}>Lihat semua</p>
               </div>
               <div className={styles.articleContainer}>
                 <div>
@@ -199,17 +156,40 @@ export default function Home() {
 
             <div className={styles.contentWrapper}>
               <div className={styles.textWrapper}>
-                <p className={styles.event}>Recordings</p>
+                <p className={styles.event}>Live Classes</p>
                 <p className={styles.action}>Lihat semua</p>
               </div>
               <div className={styles.contentContainer}>
                 {
                   articles.map(article => (
-                    <div key={article}  className={styles.previewBox}>
+                    <div key={article} className={styles.previewBox} onClick={() => router.push(`/class/${`Welcome to NEW JIC ${article}`.toLocaleLowerCase().split(' ').join('-')}`)} >
                       <img className={styles.previewImage} src={'/image-not-available.jpeg'} />
                       <div className={styles.previewTextContainer}>
                         <p className={styles.previewDate}>Jum, 20 okt 21 &#183; 19.00 WIB</p>
-                        <h2 className={styles.previewTitle}>Welcome to NEW JIC</h2>
+                        <h2 className={styles.previewTitle}>Welcome to NEW JIC {article}</h2>
+                      </div>
+                    </div>
+                  ))
+                }
+              </div>
+            </div>
+
+            <div className={styles.contentWrapper} >
+              <div className={styles.textWrapper}>
+                <p className={styles.event}>New JIC Roadmap</p>
+                <p className={styles.action}>Lihat semua</p>
+              </div>
+              <div className={styles.contentContainer}>
+                {
+                  academies.map((academy, index) => (
+                    <div key={index} className={styles.previewAcademy} onClick={() => router.push(`/roadmap/${academy.class.toLocaleLowerCase().split(' ').join('-')}`)}>
+                      <img className={styles.academyImage} src={'/image-not-available.jpeg'} />
+                      <div className={styles.academyTextContainer}>
+                        <h2 className={styles.academyTitle}>{academy.class}</h2>
+                        <div className={styles.academyLevelContainer}>
+                          <p className={styles.level}>{academy.level}</p>
+                          <div className={styles.video}>{academy.totalVideo} Videos</div>
+                        </div>
                       </div>
                     </div>
                   ))

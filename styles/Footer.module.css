@@ -3,7 +3,7 @@
   bottom: 0;
   display: flex;
   justify-content: space-evenly;
-  padding: 1rem 0;
+  padding: 1rem 0 0.5rem;
   position: fixed;
   min-width: 375px;
   max-width: 600px;

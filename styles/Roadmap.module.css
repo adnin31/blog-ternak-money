@@ -1,0 +1,98 @@
+.articleImage {
+  width: 100%;
+}
+
+.content {
+  margin: 4rem 0 0;
+  height: 100vh;
+}
+
+.articleContainer {
+  color: white;
+  padding: 0 1rem 1rem;
+}
+
+.title {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.chatLogo {
+  object-fit: contain;
+  width: 20px;
+}
+
+.backLogo {
+  object-fit: contain;
+  margin-right: 1rem;
+  width: 20px;
+}
+
+
+.articleDate {
+  color: gray;
+  margin-left: 1rem;
+}
+
+.titleContainer {
+  display : flex
+}
+
+.videoContainer {
+  margin-top: -5px;
+  object-fit: contain;
+  width: 100%;
+}
+
+.upArrow {
+  transform: rotate(90deg);
+  height: 20px;
+}
+
+.downArrow {
+  transform: rotate(270deg);
+  height: 20px;
+}
+
+.accordionHeader {
+  align-items: baseline;
+  background-color: grey;
+  border-radius: 7px;
+  color: white;
+  display: flex;
+  padding: 0 1rem;
+  justify-content: space-between;
+}
+
+.acordionInactive {
+  display: none;
+}
+
+.acordionActive {
+  display: block;
+}
+
+.accordionTitle {
+  font-size: 1rem;
+}
+
+.acordionContentContainer {
+  padding: 1rem;
+}
+
+.icon {
+  margin-right: 1rem;
+  width: 20px;
+}
+
+.listContent {
+  align-items: center;
+  display: flex;
+}
+
+.listName {
+  color: white;
+  font-weight: 400;
+}
+

@@ -2,6 +2,6 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/article/[slug]": "pages/article/[slug].js",
-  "/login": "pages/login.js"
+  "/news": "pages/news.js",
+  "/roadmap/[pid]": "pages/roadmap/[pid].js"
 }

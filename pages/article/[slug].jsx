@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import ErrorPage from 'next/error'
 import Image from 'next/image'
 import styles from '../../styles/Article.module.css'
 import Link from 'next/link'
@@ -10,6 +11,11 @@ import Content from '../../components/content'
 
 export default function Home() {
   const router = useRouter()
+  const { slug } = router.query
+
+  if (router.isFallback || !slug) {
+    return <ErrorPage statusCode={404} />
+  }
 
   return (
     <Container>

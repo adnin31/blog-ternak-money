@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import Head from 'next/head'
 import Image from 'next/image'
+import ErrorPage from 'next/error'
 import styles from '../../styles/Roadmap.module.css'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
@@ -42,6 +43,10 @@ export default function Roadmap() {
   ]
 
   const { pid } = router.query
+
+  if (router.isFallback || !pid) {
+    return <ErrorPage statusCode={404} />
+  }
 
   return (
     <Container>

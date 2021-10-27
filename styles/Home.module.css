@@ -17,16 +17,7 @@
 }
 
 .header {
-  background-color: #252b42;
-  display: flex;
-  padding: 0 1rem;
-  justify-content: space-between;
-  position: fixed;
-  top: 0;
-  min-width: 375px;
-  max-width: 600px;
-  width: 100%;
-  z-index: 10000;
+  align-items: baseline;
 }
 
 .description {
@@ -35,30 +26,15 @@
 
 .title {
   color: white;
+  cursor: pointer;
   font-size: 1.5rem;
   font-weight: bold;
 }
 
 .chatLogo {
+  cursor: pointer;
   object-fit: contain;
   width: 20px;
-}
-
-.footer {
-  background-color: #252b42;
-  bottom: 0;
-  display: flex;
-  justify-content: space-evenly;
-  padding: 1rem 0;
-  position: fixed;
-  min-width: 375px;
-  max-width: 600px;
-  width: 100%;
-}
-
-.footerIcon {
-  object-fit: contain;
-  width: 30px;
 }
 
 .copyIcon {
@@ -81,7 +57,7 @@
   width: 100vw;
 }
 
-.articleContainer {
+.articleContainerMobile {
   color: white;
   display: flex;
   max-width: 600px;
@@ -187,15 +163,7 @@
   font-size: 12px;
 }
 
-.menu {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  max-width: 600px;
-  width: 100vw;
-}
-
-.swiperContainer {
+.swiperContainerMobile {
   margin-top: 1.5rem;
   object-fit: contain;
   width: 95%;
@@ -254,5 +222,208 @@
 
 .articleTitle {
   font-size: 16px;
+}
+
+.desktopHeader {
+  display: none;
+}
+
+.articleContainerDesktop{
+  display: none;
+}
+
+.desktopBanner {
+  display: flex;
+  margin: 0;
+}
+
+.form {
+  display: none;
+}
+
+.footerContainer {
+  display: none;
+}
+
+.swiperContainerDesktop {
+  display: none;
+}
+
+@media screen and (min-width: 600px) {
+  .desktopHeader {
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 1.25;
+    font-weight: bold;
+    width: 20rem;
+  }
+
+  .desktopBanner {
+    display: flex;
+    margin: 0 3rem;
+  }
+
+  .swiperContainerMobile {
+    display: none;
+  }
+
+  .sliderWrapper {
+    max-width: 100%;
+  }
+
+  .swiperContainerDesktop {
+    display: block;
+    margin-top: 1.5rem;
+    object-fit: contain;
+    width: 100%;
+  }
+
+  .menu {
+    max-width: 200px;
+    color: white;
+    cursor: pointer;
+  }
+
+  .articleContainerMobile {
+    display: none;
+  }
+
+  .articleContainerDesktop {
+    color: white;
+    display: flex;
+    overflow: scroll;
+    margin: auto;
+    padding: 0 1rem 1rem 0;
+    width: 70vw;
+  }
+
+  .content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 94vh;
+    margin: 3rem 0 0 !important;
+  }
+
+  .header {
+    color: white;
+  }
+
+  .form {
+    color: white;
+    margin-right: 2rem;
+    min-width: 35vh;
+    display: flex;
+    flex-direction: column;
+    padding: 3rem 0;
+  }
+
+  .headerAction {
+    width: 100%;
+    text-align: right;
+  }
+
+  .formContainer {
+    width: 75%;
+  }
+
+  .input {
+    border-radius: 6px;
+    border: unset;
+    height: 2.5rem;
+    margin: 0.25rem 0 1rem;
+    padding: 0.5rem
+  }
+
+  .button {
+    background-color: #4d5363;
+    border: unset;
+    border-radius: 6px;
+    color: white;
+    font-size: 1rem;
+    height: 2.5rem;
+    padding: 0.5rem
+  }
+
+  .title {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  .copy {
+    text-align: center;
+    color: grey
+  }
+
+  .register {
+    color: white;
+    margin-left: 1rem;
+  }
+
+  .registerTitle {
+    color: white;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: start;
+    text-align: center;
+    width: 100%;
+  }
+
+  .previewImage {
+    border-radius: 20px 20px 0px 0px;
+    max-width: 25vh;
+  }
+
+  .previewBox {
+    height: 30vh;
+    max-width: none;
+  }
+
+  .contentWrapper {
+    margin-top: 2rem;
+  }
+
+  .textWrapper {
+    margin: auto;
+    width: 80%;
+  }
+
+  .contentContainer {
+    margin: auto;
+    max-width: none;
+    color: white;
+    display: flex;
+    overflow: scroll;
+    padding: 0 1rem 1rem 0;
+    width: 70vw;
+  }
+
+  .footerDesktop {
+    color: white;
+    background-color: #646d8c;
+    display: flex;
+    justify-content: space-around;
+    padding: 3rem;
+    height: 48vh;
+    width: 100%;
+  }
+
+  .menuBox {
+    margin: 0;
+    background-color: transparent;
+    justify-content: flex-start;
+    width: 200px;
+  }
+
+  .logoBox {
+    margin-right: 1rem;
+  }
+
+  .footerContainer {
+    display: block;
+    font-size: 0.75rem;
+    width: 200px;
+  }
 }
 

@@ -12,7 +12,7 @@ import Content from '../../components/content'
 export default function Home() {
   const router = useRouter()
   const { slug } = router.query
-  console.log('ini', slug)
+
   if (router.isFallback || !slug) {
     return <ErrorPage statusCode={404} />
   }

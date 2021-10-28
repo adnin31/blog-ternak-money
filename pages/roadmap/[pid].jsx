@@ -9,6 +9,8 @@ import { useRouter } from 'next/router'
 import Container from '../../components/container'
 import Header from '../../components/header'
 import Content from '../../components/content'
+import FooterDesktop from '../../components/footerDesktop'
+import HeaderDesktop from '../../components/headerDesktop'
 
 export default function Roadmap() {
   const router = useRouter()
@@ -18,7 +20,7 @@ export default function Roadmap() {
   const materies = [
     {
       id: 1,
-      className: 'Asuransi',
+      className: 'Introduction',
       sourceVideo: 'asuransi.mp4',
       isPremiumContent: false
     },
@@ -30,7 +32,7 @@ export default function Roadmap() {
     },
     {
       id: 3,
-      className: 'Kenapa Asuransi',
+      className: 'Benefit',
       sourceVideo: '1.mp4',
       isPremiumContent: false
     },
@@ -57,13 +59,14 @@ export default function Roadmap() {
       </Head>
 
       <main className={styles.main}>
-        <Header>
+        <Header className={styles.headerMobile}>
           <div className={styles.titleContainer}>
             <img className={styles.backLogo} src='/icons8-back-50.png' onClick={() => router.back()}/>
             <h1 className={styles.title}>{ pid.split('-').join(' ').toUpperCase() }</h1>
           </div>
           <img className={styles.chatLogo} src='/icons8-share-30.png'/>
         </Header>
+        <HeaderDesktop />
 
         <Content className={styles.content}>
           {
@@ -75,11 +78,10 @@ export default function Roadmap() {
               <img className={styles.articleImage} src={'/image-not-available.jpeg'} />
             )
           }
-          <p className={styles.articleDate}>Di update tanggal 1 Oktober 2021</p>
           <div className={styles.accordionContainer}>
             <div className={styles.accordionHeader} onClick={ () => setAcordionActive(!acordionActive) }>
               <h3 className={styles.accordionTitle}>{pid.split('-').join(' ').toUpperCase()}</h3>
-              <img className={`${acordionActive ? styles.downArrow : styles.upArrow}`} src='/icons8-back-50.png'/>
+              <img className={`${acordionActive ?  styles.upArrow : styles.downArrow }`} src='/icons8-back-50.png'/>
             </div>
             {
               acordionActive && (
@@ -102,7 +104,7 @@ export default function Roadmap() {
             }
           </div>
         </Content>
-
+        <FooterDesktop />
       </main>
     </Container>
   )

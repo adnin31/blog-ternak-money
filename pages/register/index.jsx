@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import styles from '../../styles/Register.module.css'
+import styles from '../../styles/Login.module.css'
 import { useRouter } from 'next/router'
 
 import Container from '../../components/container'

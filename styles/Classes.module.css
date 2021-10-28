@@ -1,0 +1,92 @@
+.title {
+  color: white;
+  cursor: pointer;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.chatLogo {
+  cursor: pointer;
+  object-fit: contain;
+  width: 20px;
+}
+
+.content {
+  color: white;
+  margin-top: 3.5rem;
+}
+
+.previewAcademy {
+  background-color: #47494f;
+  border-radius: 20px;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+  max-width: 150px;
+}
+
+.content {
+  margin: 3.5rem 0 5.5rem;
+}
+
+.academyImage {
+  border-radius: 20px 20px 0px 0px;
+  max-width: 175px;
+}
+
+.academyLevelContainer {
+  align-items: baseline;
+  display: flex;
+  font-size: 10px;
+  justify-content: space-between;
+}
+
+.academyTitle {
+  margin: 10px 0 10px;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.academyTextContainer {
+  padding: 10px;
+}
+
+.titleDesktop {
+  display: none;
+}
+
+.academyWrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@media screen and (min-width: 600px) {
+  .content {
+    color: white;
+    margin: 3.5rem 0 3rem;
+    padding-top: 1rem;
+    text-align: center;
+  }
+
+  .headerMobile {
+    display: none;
+  }
+
+  .academyWrapper {
+    display: flex;
+    max-width: 56vw;
+    flex-wrap: wrap;
+    margin: auto;
+    justify-content: center;
+  }
+
+  .titleDesktop {
+    display: block;
+  }
+
+  .previewAcademy {
+    max-width: 176px;
+  }
+}

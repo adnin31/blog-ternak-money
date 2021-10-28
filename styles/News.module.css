@@ -44,23 +44,6 @@
   width: 20px;
 }
 
-.footer {
-  background-color: #252b42;
-  bottom: 0;
-  display: flex;
-  justify-content: space-evenly;
-  padding: 1rem 0;
-  position: fixed;
-  min-width: 375px;
-  max-width: 600px;
-  width: 100%;
-}
-
-.footerIcon {
-  object-fit: contain;
-  width: 30px;
-}
-
 .copyIcon {
   color: white;
   font-size: 11px;
@@ -73,15 +56,6 @@
 }
 
 .contentContainer {
-  color: white;
-  display: flex;
-  max-width: 600px;
-  overflow: scroll;
-  padding: 0 1rem 1rem 0;
-  width: 100vw;
-}
-
-.articleContainer {
   color: white;
   display: flex;
   max-width: 600px;
@@ -130,6 +104,7 @@
 .articleImage {
   max-width: 100px;
   max-height: 100px;
+  object-fit: contain;
 }
 
 .previewTitle {
@@ -256,3 +231,70 @@
   font-size: 16px;
 }
 
+.articlePreview {
+  display: none;
+}
+
+@media screen and (min-width: 600px) {
+  .contentWrapper {
+    padding-top: 5rem;
+    position: relative;
+  }
+  .headerMobile {
+    display: none;
+  }
+
+  .articlePreview {
+    display: block;
+    font-size: 12px;
+  }
+
+  .content {
+    max-width: none;
+    margin: 0 10rem;
+  }
+
+  .articleContainer {
+    padding: 0 0 1rem;
+  }
+
+  .articleDate {
+    margin: 1rem 0;
+  }
+
+  .contentContainer {
+    color: white;
+    display: flex;
+    max-width: 50vw;
+    overflow: scroll;
+    padding: 0 1rem 1rem 0;
+    margin-top: 2rem;
+    width: 100vw;
+
+    scrollbar-width: thin;          /* "auto" or "thin" */
+    scrollbar-color: white black;   /* scroll thumb and track */
+  }
+
+  .trendingWrapper {
+    color: white;
+    display: flex;
+    max-width: 50vw;
+    overflow: scroll;
+    padding: 0 1rem 1rem 0;
+    width: 100vw;
+
+    scrollbar-width: thin;          /* "auto" or "thin" */
+    scrollbar-color: white black;   /* scroll thumb and track */
+  }
+
+  .trendingWrapper::-webkit-scrollbar {
+    width: 0;
+    height: 2px;               /* width of the entire scrollbar */
+  }
+
+  .trendingWrapper::-webkit-scrollbar-thumb {
+    background-color: white;    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    border: 1px solid white;  /* creates padding around scroll thumb */
+  }
+}

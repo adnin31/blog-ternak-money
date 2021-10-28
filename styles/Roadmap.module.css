@@ -62,6 +62,7 @@
   color: white;
   display: flex;
   padding: 0 1rem;
+  margin-top: 2rem;
   justify-content: space-between;
 }
 
@@ -94,5 +95,47 @@
 .listName {
   color: white;
   font-weight: 400;
+}
+
+@media screen and (min-width: 600px) {
+  .headerMobile {
+    display: none;
+  }
+
+  .articleContainer {
+    padding: 0 0 1rem;
+  }
+
+  .articleDate {
+    margin: 1rem 0;
+  }
+
+  .articleImage {
+    object-fit: contain;
+    max-width: 48vw;
+    width: 50%;
+  }
+
+  .content {
+    align-items: flex-start;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 3.75rem 4rem !important;
+    height: 100vh;
+    padding-top: 10vh;
+  }
+
+  .accordionHeader {
+    margin-top: 0;
+    margin-left: 1rem;
+    width: 20vw;
+  }
+
+  .videoContainer {
+    margin-top: -5px;
+    object-fit: contain;
+    max-width: 48vw;
+    width: 100%;
+  }
 }
 

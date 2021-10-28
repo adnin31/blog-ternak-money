@@ -37,3 +37,25 @@
 .titleContainer {
   display : flex
 }
+
+.headerMobile {
+  display: block;
+}
+
+@media screen and (min-width: 600px) {
+  .headerMobile {
+    display: none;
+  }
+
+  .content {
+    margin: 0 10rem;
+  }
+
+  .articleContainer {
+    padding: 0 0 1rem;
+  }
+
+  .articleDate {
+    margin: 1rem 0;
+  }
+}

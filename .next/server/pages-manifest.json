@@ -1,14 +1,7 @@
 {
   "/_app": "pages/_app.js",
-  "/api/hello": "pages/api/hello.js",
-  "/article/[slug]": "pages/article/[slug].html",
-  "/class/[slug]": "pages/class/[slug].html",
-  "/": "pages/index.html",
-  "/login": "pages/login.html",
-  "/news": "pages/news.html",
-  "/register": "pages/register.html",
-  "/roadmap/[pid]": "pages/roadmap/[pid].html",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/404": "pages/404.html"
+  "/classes": "pages/classes.js",
+  "/next/dist/pages/_error": "pages/next/dist/pages/_error.js"
 }

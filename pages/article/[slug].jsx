@@ -7,7 +7,10 @@ import { useRouter } from 'next/router'
 
 import Container from '../../components/container'
 import Header from '../../components/header'
+import HeaderDesktop from '../../components/headerDesktop'
 import Content from '../../components/content'
+import FooterDesktop from '../../components/footerDesktop'
+
 
 export default function Home() {
   const router = useRouter()
@@ -26,13 +29,14 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <Header>
+        <Header className={styles.headerMobile}>
           <div className={styles.titleContainer}>
             <img className={styles.backLogo} src='/icons8-back-50.png' onClick={() => router.back()}/>
             <h1 className={styles.title}> Welcome to NEW JIC</h1>
           </div>
           <img className={styles.chatLogo} src='/icons8-share-30.png'/>
         </Header>
+        <HeaderDesktop />
 
         <Content className={styles.content}>
           <img className={styles.articleImage} src={'/image-not-available.jpeg'} />
@@ -45,7 +49,7 @@ export default function Home() {
             <p>Suspendisse auctor erat purus, a vestibulum nulla accumsan ac. In gravida est vel erat blandit porttitor. Duis nec leo tellus. Aenean in massa at purus congue auctor ut ut felis. Quisque vitae ex felis. Donec tincidunt bibendum dui, malesuada varius nibh ullamcorper a. Duis posuere dolor nec metus vulputate, eu vulputate nisl rhoncus. Phasellus lobortis risus vitae consequat pretium. In sit amet finibus ex. Nullam a tempor nunc. In massa tellus, dictum quis mauris vitae, consequat tincidunt dolor. Maecenas dapibus finibus felis eget varius. Donec malesuada placerat tempus. Vestibulum diam magna, condimentum eu tincidunt et, venenatis a nibh. Donec sollicitudin, libero non dictum semper, nulla tellus efficitur velit, nec aliquet neque nunc sed orci.</p>
           </div>
         </Content>
-
+        <FooterDesktop />
       </main>
     </Container>
   )

@@ -1,0 +1,60 @@
+name: build-development
+on:
+  push:
+    branches:
+    - develop
+env:
+  DOCKER_IMAGE_NAME: porto-www-dev
+  GCP_REGION: asia-southeast2
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Setup Go
+      uses: actions/setup-node@v2
+      with:
+        node-version: 14.x
+    - name: Install dependencies
+      run: yarn install --frozen-lockfile
+    - name: Build
+      run: yarn build && yarn install --production --ignore-scripts --prefer-offline
+    - name: Publish artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: porto-dist
+        path: "public\n.next\nnode_modules\npackage-json"
+        retention-days: 1
+  assemble:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+    - name: Retrieve artifacts
+      uses: actions/download-artifact@v2
+      with:
+        name: porto-dist
+    - name: Fix permissions
+      run: chmod +x porto
+    - name: Setup GCloud SDK
+      uses: google-github-actions/setup-gcloud@v0.2.0
+      with:
+        project_id: ${{ secrets.GCP_PROJECT_ID }}
+        service_account_key: ${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}
+    - name: Authorize GCR
+      run: gcloud auth configure-docker
+    - name: Build Docker image
+      run: docker build -t gcr.io/${{ secrets.GCP_PROJECT_ID }}/${{ env.DOCKER_IMAGE_NAME }}:${{ github.sha }} .
+    - name: Publish Docker image
+      run: docker push gcr.io/${{ secrets.GCP_PROJECT_ID }}/${{ env.DOCKER_IMAGE_NAME }}:${{ github.sha }}
+  deploy:
+    needs: assemble
+    runs-on: ubuntu-latest
+    steps:
+    - name: Setup GCloud SDK
+      uses: google-github-actions/setup-gcloud@v0.2.0
+      with:
+        project_id: ${{ secrets.GCP_PROJECT_ID }}
+        service_account_key: ${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}
+    - name: Deploy to Cloud Run
+      run: gcloud run deploy ${{ env.DOCKER_IMAGE_NAME }} --region ${{ env.GCP_REGION }} --image gcr.io/${{ secrets.GCP_PROJECT_ID }}/${{ env.DOCKER_IMAGE_NAME }}:${{ github.sha }} --platform "managed" --async
